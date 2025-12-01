@@ -152,18 +152,3 @@ async function generateTicket(appid = "2048700062") {
 
 // 导出函数
 export { generateTicket };
-
-// 如果直接运行此脚本，则执行测试
-// if (import.meta.url === `file://${process.argv[1]}`) {
-//     generateTicket("2048700062")
-//         .then(result => {
-//             console.log('\n=== 验证码Ticket生成成功 ===');
-//             console.log('Ret:', result.ret);
-//             console.log('Ticket:', result.ticket);
-//             console.log('Randstr:', result.randstr);
-//             console.log('==========================\n');
-//         })
-//         .catch(error => {
-//             console.error('生成Ticket失败:', error);
-//         });
-// }
