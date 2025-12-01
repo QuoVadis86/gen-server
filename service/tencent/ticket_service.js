@@ -36,7 +36,7 @@ async function handleTicketGeneration(app = "hunyuan") {
             ret: result.ret,
             ticket: result.ticket,
             randstr: result.randstr,
-            platform: app,
+            // platform: app,
             platformName: appConfig.name,
             timestamp: new Date().toISOString()
         };

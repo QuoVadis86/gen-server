@@ -30,9 +30,9 @@ const server = app.listen(PORT, '0.0.0.0', (err) => {
         process.exit(1);
     }
     
-    console.log(`腾讯验证码Ticket生成服务已启动`);
+    console.log(`参数生成服务已启动`);
     console.log(`访问地址: http://localhost:${PORT}`);
-    console.log(`获取ticket接口: http://localhost:${PORT}/ticket (POST方法)`);
+    // console.log(`获取ticket接口: http://localhost:${PORT}/ticket (POST方法)`);
 });
 
 // 优雅关闭
