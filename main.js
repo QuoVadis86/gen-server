@@ -24,7 +24,12 @@ app.use((req, res) => {
 });
 
 // 启动服务器
-const server = app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, '0.0.0.0', (err) => {
+    if (err) {
+        console.error('服务器启动失败:', err);
+        process.exit(1);
+    }
+    
     console.log(`腾讯验证码Ticket生成服务已启动`);
     console.log(`访问地址: http://localhost:${PORT}`);
     console.log(`获取ticket接口: http://localhost:${PORT}/ticket`);
@@ -37,4 +42,16 @@ process.on('SIGINT', () => {
         console.log('服务器已关闭');
         process.exit(0);
     });
+});
+
+// 处理未捕获的异常
+process.on('uncaughtException', (err) => {
+    console.error('未捕获的异常:', err);
+    process.exit(1);
+});
+
+// 处理未处理的Promise拒绝
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('未处理的Promise拒绝:', reason);
+    process.exit(1);
 });
