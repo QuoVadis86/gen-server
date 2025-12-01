@@ -46,4 +46,4 @@ async function handleTicketRequest(req, res) {
     }
 }
 
-export { handleTicketGeneration, handleTicketRequest };
+export { handleTicketRequest };
