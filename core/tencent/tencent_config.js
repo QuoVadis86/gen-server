@@ -20,11 +20,16 @@ const apps = {
         name: '混元AI',
         description: '腾讯混元AI平台验证码'
     },
-    'tencent': {
+    'yuanbao': {
         appid: '2048700062',
-        name: '腾讯验证码',
-        description: '腾讯TCaptcha验证码服务'
-    }
+        name: '元宝',
+        description: '腾讯元宝平台验证码'
+    },
+    // 'tencent': {
+    //     appid: '2048700062',
+    //     name: '腾讯验证码',
+    //     description: '腾讯TCaptcha验证码服务'
+    // }
     // 可以在这里添加更多腾讯产品的详细配置
     /*
     'example': {
