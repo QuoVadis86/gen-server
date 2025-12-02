@@ -1,5 +1,5 @@
 import { getPage, closePage } from '../utils/browser_pool.js';
-
+import {solveSliderCaptcha} from './slover.js';
 /**
  * 验证码验证结果对象
  * @typedef {Object} CaptchaResult
@@ -108,6 +108,7 @@ async function generateTicket(appid = "2048700062") {
 
     console.log('页面已加载，请完成验证码验证...');
      // TODO:实现自动处理验证码
+     await solveSliderCaptcha(page);
     // 创建Promise并返回结果
     return new Promise((resolve, reject) => {
         // 设置超时
@@ -117,25 +118,25 @@ async function generateTicket(appid = "2048700062") {
         }, 120000); // 2分钟超时
 
         // 监听来自页面的消息
-        page.on('console', msg => console.log('页面控制台:', msg.text()));
+        // page.on('console', msg => console.log('页面控制台:', msg.text()));
 
-        // 监听来自iframe的消息
-        page.on('response', response => {
-            console.log('页面响应:', response.url());
-        });
+        // // 监听来自iframe的消息
+        // page.on('response', response => {
+        //     console.log('页面响应:', response.url());
+        // });
 
-        // 监听页面消息
-        page.on('message', message => {
-            console.log('收到页面消息:', message);
-        });
+        // // 监听页面消息
+        // page.on('message', message => {
+        //     console.log('收到页面消息:', message);
+        // });
 
-        // 监听来自页面的postMessage
-        page.on('request', request => {
-            // 检查是否是验证码相关请求
-            if (request.url().includes('captcha')) {
-                console.log('验证码相关请求:', request.url());
-            }
-        });
+        // // 监听来自页面的postMessage
+        // page.on('request', request => {
+        //     // 检查是否是验证码相关请求
+        //     if (request.url().includes('captcha')) {
+        //         console.log('验证码相关请求:', request.url());
+        //     }
+        // });
 
         // 监听来自页面的消息
         page.evaluate(() => {

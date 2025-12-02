@@ -1,4 +1,4 @@
-import { launch } from 'puppeteer';
+import { launch ,Page,Browser} from 'puppeteer';
 
 /**
  * 浏览器实例池管理器

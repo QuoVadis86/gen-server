@@ -1,5 +1,5 @@
-import { generateTicket } from '../../core/tencent/ticket_generator.js';
-import { getApp } from '../../core/tencent/tencent_config.js';
+import { generateTicket } from '../../core/tencent/generator.js';
+import { getApp } from '../../core/tencent/config.js';
 
 /**
  * Ticket生成结果
